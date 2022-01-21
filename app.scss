@@ -1,0 +1,225 @@
+/*  
+CSS RESET
+*/
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+html,body,h1,h2,h3,h4{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montaserrat',sans-serif;
+}
+
+/* 
+Variables
+*/
+
+// Colors
+$mainColor: white;
+$secondColor: Black;
+
+// Screen dimensions
+$phone: 375px;
+$tablet: 981px;
+
+// Font-size
+$small: 0.5rem;
+$normal: 1rem;
+$big: 1.5rem;
+$super: 3rem;
+$mega: 5rem;
+
+//Font family
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;800&display=swap');
+
+/* 
+Mixin
+*/
+
+@mixin centeredRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+@mixin centeredColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin centeredAbsolute {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin mainLayout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+@mixin button1 {
+    padding: 10px 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: unset;
+    width: 100%;
+}
+
+@mixin button2 {
+    padding: 10px 30px;
+    border: unset;
+}
+
+@mixin glassEffect {
+    background-color: rgba($color: #ffffff, $alpha: 0.15);
+    backdrop-filter: blur(5px);
+}
+
+
+.mainSection{
+    position: relative;
+    @include mainLayout();
+    width: 100%;
+    margin: auto;
+    min-height: 100vh;
+    background-image: url(./img/mic1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media only screen and (max-width:981px){
+        grid-template-columns: 1fr;
+    }
+    .photo{
+        img{
+            width: 60%;
+            border-radius: 50%;
+            box-shadow: 0px 5px 10px 2px rgba($color: #000000, $alpha: 0.25);
+        }
+        p{
+            color: green;
+            font-size: 30px;
+            font-weight: 900;
+            text-align: center;
+        }
+    }
+    .titleContainer{
+        position: relative;
+        @include centeredColumn();
+        width: 100%;
+        h1{
+            @include centeredColumn();
+            color: $mainColor;
+            font-size: $mega;
+            text-align: center;
+            line-height: 100px;
+            padding: 10px 30px;
+            text-shadow: 5px 5px rgba($color: #000000, $alpha: 0.5);
+            @media only screen and (max-width:$tablet){
+                font-size: $super;
+                line-height: unset;
+            }
+            @media only screen and (max-width:$phone){
+                font-size: $big;
+                line-height:unset;
+            }
+        }
+    }
+    .formContainer{
+        @include centeredColumn();
+        @include glassEffect();
+        height: fit-content;
+        width: 60%;
+        margin: auto;
+        row-gap: 50px;
+        padding: 10% 5%;
+        border-radius: 50px;
+        box-shadow: 0px 5px 10px 2px rgba($color: #000000, $alpha: 0.25);
+        @media only screen and (max-width:$tablet){
+            width: 80%;
+        }
+        form{
+            @include centeredColumn();
+            width: 80%;
+            row-gap: 50px;
+            input[type="submit"]{
+                @include button1();
+                cursor: pointer;
+            }
+            .slider{
+                width: 100%;
+                .slide{
+                    @include centeredColumn();
+                    gap: 50px;
+                    width: 100%;
+                    h3{
+                        text-align: center;
+                        color: $mainColor;
+                        font-size: $big;
+                    }
+                    .inputContainer{
+                        @include centeredColumn();
+                        width: 100%;
+                        row-gap: 25px;
+                        input{
+                            width: 100%;
+                            padding: 10px 30px;
+                            border: none;
+                            outline: none;
+                            color: $secondColor;
+                            font-family: 'Montserrat',sans-serif;
+                        }
+                        .choices{
+                            position: relative;
+                            @include button2();
+                            width: 100%;
+                            border: 1px solid $mainColor;
+                            input{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                opacity: 0;
+                                cursor: pointer;
+                            }
+                            span{
+                                @include centeredRow();
+                                text-align: center;
+                                font-size: $normal;
+                                font-weight: 700;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .changeSlideContainer{
+            @include centeredRow();
+            width: 100%;
+            column-gap: 30%;
+            button{
+                @include button2();
+                cursor: pointer;
+                font-weight: bold;
+            }
+        }
+
+    }
+}
+.invisible{
+    display: none !important;
+}
+.visible{
+    @include centeredColumn();
+    width: 60%;
+    margin: auto;
+}

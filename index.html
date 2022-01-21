@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <script defer src="app.js"></script>
+    <title>NodeJS application</title>
+</head>
+<body>
+    <section class="mainSection">
+        <div class="titleContainer">
+            <h1>Let's found your perfect Mic</h1>
+        </div>
+        <div class="photo a invisible">
+            <img src="./img/mic2.jpg" alt="">
+            <p>A) This is your perfect Mic</p>
+        </div>
+        <div class="photo b invisible">
+            <img src="./img/mic3.jpg" alt="">
+            <p>B) This is your perfect Mic</p>
+        </div>
+        <div class="photo c invisible">
+            <img src="./img/mic4.jpg" alt="">
+            <p>C) This is your perfect Mic</p>
+        </div>
+        <div class="photo d invisible">
+            <img src="./img/mic5.png" alt="">
+            <p>D) This is your perfect Mic</p>
+        </div>
+        <div class="formContainer">
+            <form method="POST" id="form">
+                <div class="slider">
+                    <div class="slide">
+                        <h3>What kind of music do you listen?</h3>
+                        <div class="inputContainer">
+                            <div class="choices"><input type="checkbox" name="question 1" value="a"><span>Pop music</span></div>
+                            <div class="choices"><input type="checkbox" name="question 1" value="b"><span>House</span></div>
+                            <div class="choices"><input type="checkbox" name="question 1" value="c"><span>Trap</span></div>
+                            <div class="choices"><input type="checkbox" name="question 1" value="d"><span>Lofi</span></div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <h3>What kind of mic do you use right now?</h3>
+                        <div class="inputContainer">
+                            <div class="choices"><input type="checkbox" name="question 2" value="a"><span>Dynamic Microphones</span></div>
+                            <div class="choices"><input type="checkbox" name="question 2" value="b"><span>Large Diaphram condensor Microphones</span></div>
+                            <div class="choices"><input type="checkbox" name="question 2" value="c"><span>Small diaphram condensor Microphones</span></div>
+                            <div class="choices"><input type="checkbox" name="question 2" value="d"><span>Ribbon Microphones</span></div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <h3>What budget do you have?</h3>
+                        <div class="inputContainer">
+                            <div class="choices"><input type="checkbox" name="question 3" value="a"><span>0-100$</span></div>
+                            <div class="choices"><input type="checkbox" name="question 3" value="b"><span>100-200$</span></div>
+                            <div class="choices"><input type="checkbox" name="question 3" value="c"><span>200-500$</span></div>
+                            <div class="choices"><input type="checkbox" name="question 3" value="d"><span>500-1000$</span></div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <h3>What's your job?</h3>
+                        <div class="inputContainer">
+                            <div class="choices"><input type="checkbox" name="question 4" value="a"><span>Art director</span></div>
+                            <div class="choices"><input type="checkbox" name="question 4" value="b"><span>Content creator</span></div>
+                            <div class="choices"><input type="checkbox" name="question 4" value="c"><span>Video producer</span></div>
+                            <div class="choices"><input type="checkbox" name="question 4" value="d"><span>DJ</span></div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <h3>How much work experience do you have?</h3>
+                        <div class="inputContainer">
+                            <div class="choices"><input type="checkbox" name="question 5" value="a"><span>0-1 year</span></div>
+                            <div class="choices"><input type="checkbox" name="question 5" value="b"><span>1-3 years</span></div>
+                            <div class="choices"><input type="checkbox" name="question 5" value="c"><span>3-5 years</span></div>
+                            <div class="choices"><input type="checkbox" name="question 5" value="d"><span>more than 5 yearsS</span></div>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="submit">
+            </form>
+            <div class="changeSlideContainer">
+                <button onclick='app.plusSlide(-1)' id="back">Back</button>
+                <button onclick='app.plusSlide(1)' id="next">Next</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
