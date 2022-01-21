@@ -1,8 +1,7 @@
 # quizApp
 ---
-Hello guys! In this Tutorial we will learn how to build a fullstack application from scratch using only NodeJS, HTML, SASS and Javascript. The application will be able
-to provide an interactive quiz, give to the user an answer based on his inputs and store that answers within a database.
-Hoping that you will appreciate this kind of content I wish you the best!
+Hello guys! 
+In this tutorial, we will learn how to build a full-stack application from scratch using only NodeJS, HTML, SASS and Javascript. The application will be able to provide an interactive quiz, give the user an answer based on his inputs, and store those answers within a database. Hoping that you will appreciate this kind of content I wish you the best!
 ---
 --- Useful links ---
 
